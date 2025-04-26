@@ -1,0 +1,26 @@
+[package]
+name = "flecs-rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy_ecs = "*"
+bevy_hierarchy = "*"
+flecs_ecs = "*"
+gecs = "*"
+hecs = "*"
+legion = "*"
+specs = "*"
+nalgebra = { version = "*" }
+
+[dev-dependencies]
+criterion = { version = "*", features = ["html_reports"] }
+
+[workspace]
+members = ["."]
+
+[[bench]]
+name = "ecs_bench"      # must match benches/ecs_bench.rs
+harness = false         # disable the default libtest harness
